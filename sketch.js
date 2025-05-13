@@ -52,12 +52,12 @@ function setup() {
 function draw() {
   background(220);
   orbitControl();
-  let velocita = frameCount * 0.005;
-  rotateY(velocita);
+  // let velocita = frameCount * 0.005;
+  // rotateY(velocita);
 
   cornice(g, 0.33);
   texture(g);
-  rotateY(frameCount * 0.001);
+  // rotateY(frameCount * 0.001);
 
   for (let cubo of cubi) {
     push();
@@ -65,18 +65,20 @@ function draw() {
     noStroke();
     // noFill();
     // stroke(cubo.color);
-    rotateZ(velocita);
 
-    if (cubo.rotationAxis == "x") {
-      rotateX(velocita);
-    } else if (cubo.rotationAxis == "y") {
-      rotateY(velocita);
-    } else {
-      rotateZ(velocita);
-    }
+    //   rotateZ(velocita);
+    //   if (cubo.rotationAxis == "x") {
+    //     rotateX(velocita);
+    //   } else if (cubo.rotationAxis == "y") {
+    //     rotateY(velocita);
+    //   } else {
+    //     rotateZ(velocita);
+    //   }
     box(cubo.size);
     pop();
   }
+
+  //
 
   // g.background ("deeppink")
   // g.line(0,0,100)
@@ -162,4 +164,8 @@ function cornice(g, p) {
   //lato dx
   g.line(g.width, 0, g.width, g.height * p);
   g.line(g.width, g.height, g.width, g.height - g.height * p);
+}
+
+function mousePressed() {
+  save("sketch.png");
 }
