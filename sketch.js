@@ -52,12 +52,12 @@ function setup() {
 function draw() {
   background(220);
   orbitControl();
-  // let velocita = frameCount * 0.005;
-  // rotateY(velocita);
+  let velocita = frameCount * 0.005;
+  rotateY(velocita);
 
   cornice(g, 0.33);
   texture(g);
-  // rotateY(frameCount * 0.001);
+  rotateY(frameCount * 0.001);
 
   for (let cubo of cubi) {
     push();
@@ -66,14 +66,14 @@ function draw() {
     // noFill();
     // stroke(cubo.color);
 
-    //   rotateZ(velocita);
-    //   if (cubo.rotationAxis == "x") {
-    //     rotateX(velocita);
-    //   } else if (cubo.rotationAxis == "y") {
-    //     rotateY(velocita);
-    //   } else {
-    //     rotateZ(velocita);
-    //   }
+    rotateZ(velocita);
+    if (cubo.rotationAxis == "x") {
+      rotateX(velocita);
+    } else if (cubo.rotationAxis == "y") {
+      rotateY(velocita);
+    } else {
+      rotateZ(velocita);
+    }
     box(cubo.size);
     pop();
   }
@@ -166,6 +166,7 @@ function cornice(g, p) {
   g.line(g.width, g.height, g.width, g.height - g.height * p);
 }
 
-function mousePressed() {
-  save("sketch.png");
-}
+//salva al click del mouse un png
+// function mousePressed() {
+//   save("sketch.png");
+// }
