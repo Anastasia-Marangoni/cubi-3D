@@ -170,3 +170,10 @@ function cornice(g, p) {
 // function mousePressed() {
 //   save("sketch.png");
 // }
+
+//salva gif
+function keyPressed() {
+  if (key === "s") {
+    saveGif("mySketch", 07);
+  }
+}
