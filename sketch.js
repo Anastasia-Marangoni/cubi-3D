@@ -50,7 +50,7 @@ function setup() {
 //
 
 function draw() {
-  background(220);
+  background("#D5D7E2");
   orbitControl();
   let velocita = frameCount * 0.005;
   rotateY(velocita);
@@ -145,7 +145,7 @@ function windowResized() {
  * @param {number} p
  */
 function cornice(g, p) {
-  g.background(220);
+  g.background("#D5D7E2");
   g.strokeCap(SQUARE);
   g.strokeWeight(22);
 
@@ -174,6 +174,6 @@ function cornice(g, p) {
 //salva gif
 function keyPressed() {
   if (key === "s") {
-    saveGif("mySketch", 07);
+    saveGif("mySketch", 03);
   }
 }
